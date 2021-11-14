@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>Random Color Generator</h1>
+
+        <section id="divBox"></section>
+
+        <div class="inputBox">
+            <input id="inputText" type="text" value="0">
+            <button id="btn">+ Add Color</button>
+        </div>
+
+    </div>
+
+    <script>
+        const container = document.querySelector('.container');
+        const section = document.getElementById('divBox');
+        const inputBox = document.querySelector('.inputBox');
+
+        container.addEventListener('click', (event) =>
+        {
+            if(event.target.id == 'btn') 
+            {
+                inputBox.firstElementChild.value ++ 
+            }
+            if(inputBox.firstElementChild.value)
+            {
+                randomBox() 
+            }
+            if(event.target.id == 'boxBtn')
+            {
+                section.lastElementChild.remove() 
+            } 
+        });
+
+        function randomBox()
+        {
+            const div = document.createElement('div');
+            div.style.width = '200px'
+            div.style.height = '150px'
+            div.style.margin = '10px'
+            const button = document.createElement('button');
+            button.id = 'boxBtn'
+            button.innerText = 'x';
+            div.appendChild(button)
+            div.style.textAlign = 'right'
+            section.appendChild(div);
+            const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+            div.style.backgroundColor = "#" + randomColor;
+        }
+
+       
+    </script>
+</body>
+
+</html>

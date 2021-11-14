@@ -1,0 +1,17 @@
+.container {
+    width: 70vw;
+    margin: auto;
+}
+section {
+    display: flex;
+    flex-wrap: wrap;
+}
+#inputText {
+    height: 25px;
+}
+#btn {
+    background-color: green;
+    color: white;
+    border: none;
+    height: 30px;
+}
